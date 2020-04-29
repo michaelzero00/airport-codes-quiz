@@ -30,8 +30,32 @@ h2 {
 
 #correctAnswer {
   text-align: center;
+  font-weight: 400;
 }
 
 #displayCorrectAnswer {
   font-weight: 600;
+}
+
+/*   ------ FORM STYLE ----- */ 
+
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 80%;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  padding: 13px 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 20%;
+  font-size: 80%;
+  vertical-align: right;
 }

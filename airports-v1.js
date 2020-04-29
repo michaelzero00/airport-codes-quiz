@@ -17,10 +17,10 @@ var random = Math.round(Math.random() * airportCodes.length);
 // set the H1 element to display the random IATA code from the array
 document.getElementById("displayIATACode").textContent = airportCodes[random]["iata"]
 
+// 
+
 // grab the user input
-var userAnswer = document.getElementById("userGuess").value;
-
-
-
-
-// compare user answer to 
+var answerButton = document.getElementById("submit");
+answerButton.addEventListener("click", function(){
+  alert(document.getElementById("userGuess").value);
+}
