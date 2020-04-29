@@ -1,9 +1,37 @@
-body {
-  background-color: lightblue;
+html, body {
+    height: 100%;
+    background-color: #feee5d;
 }
 
-displayIATACode {
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Work Sans', 'Arial', sans-serif;
+}
+
+#displayIATACode {
+  text-align: center;
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
-  font-size: 300%;
+  font-size: 350%;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 150%;
+}
+
+#correctAnswer {
+  text-align: center;
+}
+
+#displayCorrectAnswer {
+  font-weight: 600;
 }
