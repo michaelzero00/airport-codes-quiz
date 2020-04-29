@@ -17,3 +17,4 @@
 
 #VERSION FOUR
 1. Add leaderboard which draws variable highScore and displays top 10 users.
+2. Tolerance for typos
