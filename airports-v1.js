@@ -8,7 +8,7 @@ var airportCodes = [{iata: "LHR", name: "London Heathrow", city: "London", count
 
 // temp script to pull code from array and display it on the front end
   
-//grab the H1 we want to dispaly the IATA code in
+// get the H1 we want to dispaly the IATA code in
 var currentCode = document.getElementById("displayIATACode");
 
 // choose a random IATA value from the array. 
@@ -18,17 +18,26 @@ var randomIATACode = airportCodes[random]["iata"];
 // set the H1 element to display the random IATA code from the array
 document.getElementById("displayIATACode").textContent = randomIATACode
 
-// 
+// get the You Guessed and Correct Answer 
+var youGuessedField = document.getElementById("guessedAnswer");
+var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 
 // grab the user input
 var answerButton = document.getElementById("submit");
-var userGuess = document.getElementById("userGuess").value
 answerButton.addEventListener('click', function(){
-  // test user input against current answer
-  console.log(userGuess);
-  if (userGuess.value.toLowerCase() === randomIATACode.toLowerCase()){
-    alert('you are right!')
-  }
+  // test user input against current answer and if correct set alert "you are right"
+
+  // if (document.getElementById("userGuess").value.toLowerCase() === airportCodes[random]["city"].toLowerCase()){
+  //   alert('you are right!')
+  // } else {
+  //   alert ('wrong sucker');
+  // }
+  
+  // set the You Guessed field
+  youGuessedField.innerHTML(document.getElementById("userGuess").value) 
+  // set the Correct Answer field
+  displayCorrectAnswerField.innerHTML(airportCodes[random]["city"])
+  
   
 });
                               
