@@ -21,15 +21,23 @@
     </h2>
     <h1 id="displayIATACode">LHR</h1>
     
-    <div class="form-container">
-    
+    <div class="container">
+      <div class="row">
         <form>
-          <input id="userGuess" type="text" placeholder="What's your guess?">
-          <input type="submit" value="GO" id="submit">
+          <div class="col-75">
+             <input id="userGuess" type="text" placeholder="What's your guess?">
+          </div>
+          <div class="col-25">
+            <input type="submit" value="GO" id="submit">
+          </div>
         </form>
-      
+      </div>
     </div>
     
+
+    <h3 id="correctAnswer">
+      YOU  <span id="displayCorrectAnswer">goes here</span>
+    </h3>
     <h3 id="correctAnswer">
       Correct Answer: <span id="displayCorrectAnswer">goes here</span>
     </h3>

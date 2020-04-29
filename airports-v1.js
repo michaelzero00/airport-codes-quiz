@@ -13,14 +13,23 @@ var currentCode = document.getElementById("displayIATACode");
 
 // choose a random IATA value from the array. 
 var random = Math.round(Math.random() * airportCodes.length);
+var randomIATACode = airportCodes[random]["iata"];
 
 // set the H1 element to display the random IATA code from the array
-document.getElementById("displayIATACode").textContent = airportCodes[random]["iata"]
+document.getElementById("displayIATACode").textContent = randomIATACode
 
 // 
 
 // grab the user input
 var answerButton = document.getElementById("submit");
-answerButton.addEventListener("submit", function(){
-  alert('button clicked');
-}
+var userGuess = document.getElementById("userGuess").value
+answerButton.addEventListener('click', function(){
+  // test user input against current answer
+  console.log(userGuess);
+  if (userGuess.value.toLowerCase() === randomIATACode.toLowerCase()){
+    alert('you are right!')
+  }
+  
+});
+                              
+                       
