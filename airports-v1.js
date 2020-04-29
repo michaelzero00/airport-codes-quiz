@@ -21,6 +21,6 @@ document.getElementById("displayIATACode").textContent = airportCodes[random]["i
 
 // grab the user input
 var answerButton = document.getElementById("submit");
-answerButton.addEventListener("click", function(){
-  alert(document.getElementById("userGuess").value);
+answerButton.addEventListener("submit", function(){
+  alert('button clicked');
 }
