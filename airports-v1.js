@@ -32,6 +32,10 @@ answerButton.addEventListener('click', function(){
   // } else {
   //   alert ('wrong sucker');
   // }
+  console.log(document.getElementById("userGuess").value);
+  console.log(airportCodes[random]["city"]);
+  
+  
   
   // set the You Guessed field
   youGuessedField.innerHTML(document.getElementById("userGuess").value) 
