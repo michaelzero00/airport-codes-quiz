@@ -2,52 +2,55 @@
 <html lang="en">
   <head>
     <title>Guess The Airport</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css" />
+
     <!-- get Google Fontzz -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&family=Work+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- import the webpage's javascript file -->
     <script src="/airports-v1.js" defer></script>
     <script src="/app-v1.js" defer></script>
-  </head>  
+  </head>
   <body>
     <h2>
       Which city does this airport serve?
     </h2>
     <h1 id="displayIATACode">LHR</h1>
-    
+
     <div class="container">
       <div class="row">
         <form>
           <div class="col-75">
-             <input id="userGuess" type="text" placeholder="What's your guess?" autofocus>
+            <input
+              id="userGuess"
+              type="text"
+              placeholder="What's your guess?"
+              autofocus
+            />
           </div>
           <div class="col-25">
-            <input type="submit" value="GO" id="submit">
+            <input type="submit" value="GO" id="submit" />
           </div>
         </form>
       </div>
     </div>
-    
 
-    <h3 id="correctAnswer">
+    <h3 id="guessedAnswer">
       You Guessed: <span id="guessedAnswer">goes here</span>
     </h3>
     <h3 id="correctAnswer">
       Correct Answer: <span id="displayCorrectAnswer">goes here</span><br />
       <span id="displayCorrectAirportName">Airport name</span>
     </h3>
-    <h3 id="correctAnswer">
-      Your Streak: <span id="showStreak">1</span>
-    </h3>
-    
-   
+    <h3>Your Streak: <span id="showStreak">1</span></h3>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
