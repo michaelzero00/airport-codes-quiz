@@ -37,9 +37,17 @@ h2 {
   font-weight: 400;
 }
 
+#guessedAnswerText {
+  font-weight: 400;
+  text-align: center;
+}
+
 #displayCorrectAnswer, #guessedAnswer {
   font-weight: 600;
+  text-align: center;
 }
+
+
 
 /*   ------ FORM STYLE ----- */ 
 

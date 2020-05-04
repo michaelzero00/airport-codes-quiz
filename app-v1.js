@@ -34,9 +34,9 @@ var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 
 // grab the user input
 var answerButton = document.getElementById("submit");
-answerButton.addEventListener('click', function(){
+answerButton.addEventListener('click', function(i){
   // test user input against current answer and if correct set alert "you are right"
-
+  // i.event.preventDefault();
   if (document.getElementById("userGuess").value.toLowerCase() === airportCodes[random]["city"].toLowerCase()){
     alert('you are right!')
   } else {
@@ -44,7 +44,7 @@ answerButton.addEventListener('click', function(){
   }
   console.log(document.getElementById("userGuess").value);
   console.log(airportCodes[random]["city"]);
-  
+  return false;
   
   
   // set the You Guessed field
@@ -54,5 +54,13 @@ answerButton.addEventListener('click', function(){
   
   
 });
-                              
-                       
+
+// function to stop form submitting and refreshing page
+
+$(document).ready(function() {
+    $(document).on('submit', '#my-form', function() {
+      // do your things
+      return false;
+     });
+});
+

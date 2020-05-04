@@ -18,6 +18,9 @@
     <!-- import the webpage's javascript file -->
     <script src="/airports-v1.js" defer></script>
     <script src="/app-v1.js" defer></script>
+    
+    <! - import jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
   </head>
   <body>
     <h2>
@@ -43,14 +46,14 @@
       </div>
     </div>
 
-    <h3 id="guessedAnswer">
-      You Guessed: <span id="guessedAnswer">goes here</span>
+    <h3 id="guessedAnswerText">
+      You Guessed: <strong><span id="guessedAnswer">goes here</span></strong>
     </h3>
     <h3 id="correctAnswer">
       Correct Answer: <span id="displayCorrectAnswer">goes here</span><br />
       <span id="displayCorrectAirportName">Airport name</span>
     </h3>
-    <h3>Your Streak: <span id="showStreak">1</span></h3>
+    <h3 id="guessedAnswerText">Your Streak: <span id="showStreak">1</span></h3>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
