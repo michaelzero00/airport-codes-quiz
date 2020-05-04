@@ -91,6 +91,10 @@ var airportCodes = [
 // get the H1 we want to dispaly the IATA code in
 var currentCode = document.getElementById("displayIATACode");
 
+
+// declare the global variable for the current answer
+var currentAnswer = ""
+
 // call function to generate a new question
 generateNewQuestion()
 
@@ -102,18 +106,16 @@ var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 $(document).ready(function() {
   $(document).on("submit", "#my-form", function() {
     // test user input against current answer and if correct set alert "you are right"
-    // i.event.preventDefault();
-    var random = generateNewQuestion();
     if (
       document.getElementById("userGuess").value.toLowerCase() ===
       currentAnswer.toLowerCase()
     ) {
       alert("you are right!");
+      generateNewQuestion()
     } else {
       alert("wrong sucker");
+      generateNewQuestion()
     }
-    // console.log(document.getElementById("userGuess").value);
-    // console.log(airportCodes[random]["city"]);
     
     return false;
   });
@@ -127,8 +129,7 @@ function generateNewQuestion() {
   // set the H1 element to display the random IATA code from the array
   document.getElementById("displayIATACode").textContent = randomIATACode;
   // export a string of the location based on this code.
-  var currentAnswer = airportCodes[random]["city"]
+  currentAnswer = airportCodes[random]["city"]
   // export the string value of the airport location
   console.log("Current value displayed is " + currentAnswer)
-  return currentAnswer;
 }
