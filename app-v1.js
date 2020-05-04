@@ -1,6 +1,3 @@
-// fetch the airports database array from airports.js 
-
-
 // temp script to pull code from array and display it on the front end
   
 // get the H1 we want to dispaly the IATA code in
