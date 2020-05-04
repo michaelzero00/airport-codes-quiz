@@ -33,9 +33,33 @@ var youGuessedField = document.getElementById("guessedAnswer");
 var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 
 // grab the user input
-var answerButton = document.getElementById("submit");
-answerButton.addEventListener('click', function(i){
-  // test user input against current answer and if correct set alert "you are right"
+// var answerButton = document.getElementById("submit");
+// answerButton.addEventListener('click', function(i){
+//   // test user input against current answer and if correct set alert "you are right"
+//   // i.event.preventDefault();
+//   if (document.getElementById("userGuess").value.toLowerCase() === airportCodes[random]["city"].toLowerCase()){
+//     alert('you are right!')
+//   } else {
+//     alert ('wrong sucker');
+//   }
+//   console.log(document.getElementById("userGuess").value);
+//   console.log(airportCodes[random]["city"]);
+//   return false;
+  
+  
+//   // set the You Guessed field
+//   youGuessedField.innerHTML(document.getElementById("userGuess").value) 
+//   // set the Correct Answer field
+//   displayCorrectAnswerField.innerHTML(airportCodes[random]["city"])
+  
+  
+// });
+
+// function to stop form submitting and refreshing page
+
+$(document).ready(function() {
+    $(document).on('submit', '#my-form', function() {
+      // test user input against current answer and if correct set alert "you are right"
   // i.event.preventDefault();
   if (document.getElementById("userGuess").value.toLowerCase() === airportCodes[random]["city"].toLowerCase()){
     alert('you are right!')
@@ -44,22 +68,6 @@ answerButton.addEventListener('click', function(i){
   }
   console.log(document.getElementById("userGuess").value);
   console.log(airportCodes[random]["city"]);
-  return false;
-  
-  
-  // set the You Guessed field
-  youGuessedField.innerHTML(document.getElementById("userGuess").value) 
-  // set the Correct Answer field
-  displayCorrectAnswerField.innerHTML(airportCodes[random]["city"])
-  
-  
-});
-
-// function to stop form submitting and refreshing page
-
-$(document).ready(function() {
-    $(document).on('submit', '#my-form', function() {
-      // do your things
       return false;
      });
 });
