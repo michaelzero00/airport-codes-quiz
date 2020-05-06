@@ -124,17 +124,19 @@ $(document).ready(function() {
       // alert("you are right!");
       score++
       generateNewQuestion()
-      // resetTextBox ()
+      // document.getElementById("userGuess").value = "";
     } else {
-      // alert("wrong sucker");
+      // alert("wrong");
       generateNewQuestion()
-      // resetTextBox ()
+      // document.getElementById("userGuess").value = "";
     }
-    // update score based on global score
+    // increment score based on global score
     currentGuesses++;
+    // increment the currentGuesses to the current guesses
     currentGuessesSpan.textContent = currentGuesses;
     currentScoreSpan.textContent = score;
-    // document.getElementById("userguess").textContent = "";
+    // clear 
+    document.getElementById("userGuess").value = "";
     return false;
   });
 });
