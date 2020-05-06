@@ -32,12 +32,7 @@ h2 {
   font-size: 150%;
 }
 
-#correctAnswer {
-  text-align: center;
-  font-weight: 400;
-}
-
-#guessedAnswerText {
+#guessedAnswerText, #streak, #correctAnswer {
   font-weight: 400;
   text-align: center;
 }

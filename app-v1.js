@@ -99,9 +99,14 @@ generateNewQuestion()
 
  // declare score variable
 let score = 0;
+let currentGuesses = 0;
 
-// get score span and make it match current score
-let currentScore = document.getElementById("showStreak");
+// get score span 
+let currentScoreSpan = document.getElementById("showStreak");
+
+// get current guesses span
+let currentGuessesSpan = document.getElementById("totalGuesses");
+
 
 
 // get the You Guessed and Correct Answer
@@ -126,15 +131,14 @@ $(document).ready(function() {
       // resetTextBox ()
     }
     // update score based on global score
-    currentScore.textContent = score;
+    currentGuesses++;
+    currentGuessesSpan.textContent = currentGuesses;
+    currentScoreSpan.textContent = score;
     // document.getElementById("userguess").textContent = "";
     return false;
   });
 });
 
-function resetTextBox (){
-  document.getElementById("userguess").textContent = "";
-}
 
 function generateNewQuestion() {
   // choose a random value equal to the length of the IATA array
