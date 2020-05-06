@@ -91,12 +91,17 @@ var airportCodes = [
 // get the H1 we want to dispaly the IATA code in
 var currentCode = document.getElementById("displayIATACode");
 
-
 // declare the global variable for the current answer
 var currentAnswer = ""
 
 // call function to generate a new question
 generateNewQuestion()
+
+ // declare score variable
+let score = 0;
+
+// get score span and make it match current score
+let currentScore = document.getElementById("showStreak");
 
 
 // get the You Guessed and Correct Answer
@@ -111,12 +116,15 @@ $(document).ready(function() {
       currentAnswer.toLowerCase()
     ) {
       alert("you are right!");
+      score++
       generateNewQuestion()
     } else {
       alert("wrong sucker");
       generateNewQuestion()
     }
-    
+    // update score based on global score
+    currentScore.textContent = score;
+    document.getElementById("userguess").reset();
     return false;
   });
 });
