@@ -110,24 +110,31 @@ var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 
 $(document).ready(function() {
   $(document).on("submit", "#my-form", function() {
+    // resetTextBox ()
     // test user input against current answer and if correct set alert "you are right"
     if (
       document.getElementById("userGuess").value.toLowerCase() ===
       currentAnswer.toLowerCase()
     ) {
-      alert("you are right!");
+      // alert("you are right!");
       score++
       generateNewQuestion()
+      // resetTextBox ()
     } else {
-      alert("wrong sucker");
+      // alert("wrong sucker");
       generateNewQuestion()
+      // resetTextBox ()
     }
     // update score based on global score
     currentScore.textContent = score;
-    document.getElementById("userguess").reset();
+    // document.getElementById("userguess").textContent = "";
     return false;
   });
 });
+
+function resetTextBox (){
+  document.getElementById("userguess").textContent = "";
+}
 
 function generateNewQuestion() {
   // choose a random value equal to the length of the IATA array
@@ -140,4 +147,6 @@ function generateNewQuestion() {
   currentAnswer = airportCodes[random]["city"]
   // export the string value of the airport location
   console.log("Current value displayed is " + currentAnswer)
+  // clear the text input
+  
 }
