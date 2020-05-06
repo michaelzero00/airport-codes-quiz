@@ -99,6 +99,8 @@ generateNewQuestion()
 
  // declare score variable
 let score = 0;
+
+// declare currentGuess variable
 let currentGuesses = 0;
 
 // get score span 
@@ -107,35 +109,37 @@ let currentScoreSpan = document.getElementById("showStreak");
 // get current guesses span
 let currentGuessesSpan = document.getElementById("totalGuesses");
 
-
-
 // get the You Guessed and Correct Answer
 var youGuessedField = document.getElementById("guessedAnswer");
 var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 
+// on form submission function
 $(document).ready(function() {
   $(document).on("submit", "#my-form", function() {
-    // resetTextBox ()
+    let userGuess = document.getElementById("userGuess").value;
     // test user input against current answer and if correct set alert "you are right"
     if (
-      document.getElementById("userGuess").value.toLowerCase() ===
-      currentAnswer.toLowerCase()
+      userGuess.toLowerCase() === currentAnswer.toLowerCase()
     ) {
-      // alert("you are right!");
+      // increment score
       score++
       generateNewQuestion()
-      // document.getElementById("userGuess").value = "";
+      
     } else {
-      // alert("wrong");
       generateNewQuestion()
-      // document.getElementById("userGuess").value = "";
+      
     }
-    // increment score based on global score
+    // push the last guess to the text element
+    youGuessedField.textContent = userGuess;
+    // push correct answer to the text element
+    
+    displayCorrectAnswerField.textContent = currentAnswer;
+    // increment guesses based on global score
     currentGuesses++;
-    // increment the currentGuesses to the current guesses
+    // update the currentGuesses to the current guesses
     currentGuessesSpan.textContent = currentGuesses;
     currentScoreSpan.textContent = score;
-    // clear 
+    // clear user input ready for the new guess
     document.getElementById("userGuess").value = "";
     return false;
   });
