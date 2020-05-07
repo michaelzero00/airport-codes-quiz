@@ -94,7 +94,7 @@ var currentCode = document.getElementById("displayIATACode");
 // declare the global variable for the current answer
 var currentAnswer = ""
 
-//array to retrieve the answer later
+//array to retrieve the IATA Code and Airport Name later
 let previousAnswer = [];
 
 // call function to generate a new question
@@ -111,6 +111,9 @@ let currentScoreSpan = document.getElementById("showStreak");
 
 // get current guesses span
 let currentGuessesSpan = document.getElementById("totalGuesses");
+
+// get correct answer airport name
+let correctAnswerAirport = document.getElementById("displayCorrectAirportName")
 
 // get the You Guessed and Correct Answer
 var youGuessedField = document.getElementById("guessedAnswer");
@@ -139,6 +142,7 @@ $(document).ready(function() {
     // push correct answer to the text element
     
     displayCorrectAnswerField.textContent = previousAnswer[0];
+    correctAnswerAirport.textContent = 
     // increment guesses based on global score
     currentGuesses++;
     // update the currentGuesses to the current guesses
@@ -160,6 +164,7 @@ function generateNewQuestion() {
   document.getElementById("displayIATACode").textContent = randomIATACode;
   // export a string of the location based on this code.
   currentAnswer = airportCodes[random]["city"]
+  let currentCity = airportCodes[random]["name"]
   // export the string value of the airport location
   console.log("Current value displayed is " + currentAnswer)
   // clear the text input
