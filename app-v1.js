@@ -94,6 +94,9 @@ var currentCode = document.getElementById("displayIATACode");
 // declare the global variable for the current answer
 var currentAnswer = ""
 
+//array to retrieve the answer later
+let previousAnswer = [];
+
 // call function to generate a new question
 generateNewQuestion()
 
@@ -116,6 +119,8 @@ var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 // on form submission function
 $(document).ready(function() {
   $(document).on("submit", "#my-form", function() {
+    //push current answer into the previousAnswer array
+    previousAnswer[0] = currentAnswer;
     let userGuess = document.getElementById("userGuess").value;
     // test user input against current answer and if correct set alert "you are right"
     if (
@@ -133,7 +138,7 @@ $(document).ready(function() {
     youGuessedField.textContent = userGuess;
     // push correct answer to the text element
     
-    displayCorrectAnswerField.textContent = currentAnswer;
+    displayCorrectAnswerField.textContent = previousAnswer[0];
     // increment guesses based on global score
     currentGuesses++;
     // update the currentGuesses to the current guesses
