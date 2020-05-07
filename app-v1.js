@@ -91,12 +91,8 @@ var airportCodes = [
 // get the H1 we want to dispaly the IATA code in
 var currentCode = document.getElementById("displayIATACode");
 
-// declare array containing current answer and previous answer
-let answerArray = []
-
-// declare the global variable for the current answer and push this to the array
+// declare the global variable for the current answer
 var currentAnswer = ""
-answerArray.push = currentAnswer;
 
 // call function to generate a new question
 generateNewQuestion()
@@ -120,8 +116,6 @@ var displayCorrectAnswerField = document.getElementById("displayCorrectAnswer");
 // on form submission function
 $(document).ready(function() {
   $(document).on("submit", "#my-form", function() {
-    //push the answer into the array to retrieve later
-    answerArray[0].push = currentAnswer;
     let userGuess = document.getElementById("userGuess").value;
     // test user input against current answer and if correct set alert "you are right"
     if (
@@ -135,7 +129,6 @@ $(document).ready(function() {
       generateNewQuestion()
       
     }
-    // push the 
     // push the last guess to the text element
     youGuessedField.textContent = userGuess;
     // push correct answer to the text element
